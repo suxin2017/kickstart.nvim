@@ -11,3 +11,13 @@ vim.api.nvim_create_autocmd('TextYankPost', {
     vim.highlight.on_yank()
   end,
 })
+
+-- 提示是录制模式
+vim.api.nvim_create_autocmd('RecordingEnter', {
+  desc = 'Notify RecordingEnter',
+  group = vim.api.nvim_create_augroup('NotifyNotifyMacroRecordStarted', {}),
+  callback = function(ctx)
+    local msg = 'Recording macro started\n' .. 'id [' .. vim.fn.reg_recording() .. ']\n' .. 'buffer [' .. ctx.buf .. ']\n' .. 'file [' .. ctx.file .. ']'
+    vim.notify(msg)
+  end,
+})
