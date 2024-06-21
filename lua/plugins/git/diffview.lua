@@ -3,6 +3,7 @@ return {
   event = 'VeryLazy',
   opt = {},
   config = function()
+    -- 关快了可能有nui报错，感觉是tab关了他的popup 没地方弹起了
     local current_mode = 'stash'
     function DiffviewToggle(mode)
       local lib = require 'diffview.lib'
@@ -12,7 +13,6 @@ return {
       if mode == 'master' then
         open_cmd = open_cmd .. ' origin/master..HEAD'
       end
-      print(current_mode, mode, not not view)
       if mode == current_mode then
         if view then
           -- Current tabpage is a Diffview; close it
