@@ -75,3 +75,9 @@ vim.opt.confirm = true -- Confirm to save changes before exiting modified buffer
 vim.opt.hlsearch = true
 
 vim.opt.laststatus = 3
+vim.opt.expandtab = true
+vim.opt.shiftwidth = 2
+vim.opt.tabstop = 2
+
+vim.opt.linebreak = true -- Wrap lines at convenient points
+vim.opt.list = true -- Show some invisible characters (tabs...
