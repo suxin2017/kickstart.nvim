@@ -1,5 +1,7 @@
 -- [[ Basic Keymaps ]]
 
+local map = vim.keymap.set
+
 -- Set highlight on search, but clear on pressing <Esc> in normal mode
 vim.keymap.set('n', '<Esc>', '<cmd>nohlsearch<CR>')
 
@@ -16,6 +18,11 @@ vim.keymap.set('n', '<A-Up>', '<cmd>resize +2<cr>', { desc = 'Move focus to the 
 vim.keymap.set('n', '<A-Down>', '<cmd>resize -2<cr>', { desc = 'Move focus to the right window' })
 vim.keymap.set('n', '<A-Left>', '<cmd>vertical resize +2<cr>', { desc = 'Move focus to the lower window' })
 vim.keymap.set('n', '<A-Right>', '<cmd>vertical resize -2<cr>', { desc = 'Move focus to the upper window' })
+
+map('n', '<leader>ww', '<C-W>p', { desc = 'Other Window', remap = true })
+map('n', '<leader>wd', '<C-W>c', { desc = 'Delete Window', remap = true })
+map('n', '<leader>w-', '<C-W>s', { desc = 'Split Window Below', remap = true })
+map('n', '<leader>w|', '<C-W>v', { desc = 'Split Window Right', remap = true })
 
 -- escape terminal
 vim.keymap.set('t', '<Esc><Esc>', '<C-\\><C-n>', { desc = 'Exit terminal mode' })
@@ -34,3 +41,23 @@ vim.keymap.set('n', '<leader>bb', '<cmd>e #<cr>', { desc = 'Switch to other buff
 
 -- terminal
 vim.keymap.set({ 'n', 't', 'i' }, '<C-\\>', '<cmd>ToggleTerm<cr>', { desc = 'Toggle terminal' })
+
+-- quicklist
+vim.keymap.set('n', '[q', vim.cmd.cprev, { desc = 'Previous Quickfix' })
+vim.keymap.set('n', ']q', vim.cmd.cnext, { desc = 'Next Quickfix' })
+
+-- diagnostic
+local diagnostic_goto = function(next, severity)
+  local go = next and vim.diagnostic.goto_next or vim.diagnostic.goto_prev
+  severity = severity and vim.diagnostic.severity[severity] or nil
+  return function()
+    go { severity = severity }
+  end
+end
+map('n', '<leader>cd', vim.diagnostic.open_float, { desc = 'Line Diagnostics' })
+map('n', ']d', diagnostic_goto(true), { desc = 'Next Diagnostic' })
+map('n', '[d', diagnostic_goto(false), { desc = 'Prev Diagnostic' })
+map('n', ']e', diagnostic_goto(true, 'ERROR'), { desc = 'Next Error' })
+map('n', '[e', diagnostic_goto(false, 'ERROR'), { desc = 'Prev Error' })
+map('n', ']w', diagnostic_goto(true, 'WARN'), { desc = 'Next Warning' })
+map('n', '[w', diagnostic_goto(false, 'WARN'), { desc = 'Prev Warning' })

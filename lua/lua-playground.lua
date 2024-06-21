@@ -1,6 +1,12 @@
 local log = require('config').log
 local i = require('nvim-web-devicons').get_icon('1.ts', 'ts')
 
-local key = vim.api.nvim_get_keymap()
+vim.keymap.set('n', '<C-/>', function()
+  print 'hello'
+end)
 
-log(key)
+vim.keymap.set('n', '<C-.>', function()
+  print 'hello'
+end)
+
+print 'done'
