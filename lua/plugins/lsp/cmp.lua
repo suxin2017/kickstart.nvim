@@ -39,7 +39,9 @@ return { -- Autocompletion
     -- See `:help cmp`
     local cmp = require 'cmp'
     local luasnip = require 'luasnip'
-    luasnip.config.setup {}
+    luasnip.config.setup {
+      store_selection_keys = '<Tab>',
+    }
     require('luasnip.loaders.from_vscode').lazy_load { paths = './lua/custom/snippet' }
 
     require('nvim-autopairs').setup {}
@@ -81,7 +83,7 @@ return { -- Autocompletion
         -- Manually trigger a completion from nvim-cmp.
         --  Generally you don't need this, because nvim-cmp will display
         --  completions whenever it has completion options available.
-        ['<C-Space>'] = cmp.mapping.complete {},
+        ['<C-i>'] = cmp.mapping.complete {},
 
         -- Think of <c-l> as moving to the right of your snippet expansion.
         --  So if you have a snippet that's like:

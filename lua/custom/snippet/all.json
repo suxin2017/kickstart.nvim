@@ -1,16 +1,18 @@
 {
   "snip1": {
     "prefix": "all1",
-    "body": [
-      "expands? jumps? $1 $2 !"
-    ]
+    "body": ["expands? jumps? $1 $2 !"]
   },
   "snip2": {
     "prefix": "all2",
-    "body": [
-      "multi $1",
-      "line $2",
-      "snippet$0"
-    ]
+    "body": ["multi $1", "line $2", "snippet$0"]
+  },
+  "st": {
+    "prefix": "st",
+    "body": ["multi $TM_SELECTED_TEXT"]
+  },
+  "co": {
+    "prefix": "co",
+    "body": ["${1|one,two,three|}."]
   }
 }

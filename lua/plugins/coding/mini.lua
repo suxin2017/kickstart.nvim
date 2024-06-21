@@ -12,6 +12,19 @@ return {
         custom_textobjects = {
           F = gen_spec.treesitter { a = '@function.outer', i = '@function.inner' },
           t = gen_spec.treesitter { a = '@jsx.outer', i = '@jsx.inner' },
+          e = function()
+            local current_buffer = vim.api.nvim_get_current_buf()
+            local line_count = vim.api.nvim_buf_line_count(current_buffer)
+
+            return {
+              from = { line = 1, col = 1 },
+              to = {
+                line = line_count,
+                col = 1,
+              },
+              vis_mode = 'V',
+            }
+          end,
         },
       }
     end,

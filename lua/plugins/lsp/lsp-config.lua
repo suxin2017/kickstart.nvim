@@ -218,6 +218,7 @@ return { -- LSP Configuration & Plugins
         -- cmd = {...},
         -- filetypes = { ...},
         -- capabilities = {},
+        filetypes = { 'lua' },
         settings = {
           Lua = {
             completion = {
