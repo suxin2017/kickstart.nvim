@@ -14,6 +14,10 @@ power by kckstart
 ['nightly'](https://github.com/neovim/neovim/releases/tag/nightly) of Neovim.
 If you are experiencing issues, please make sure you have the latest versions.
 
+```
+git clone git@github.com:suxin2017/kickstart.nvim.git ~/.config/nvim
+```
+
 ### Install External Dependencies
 
 External Requirements:
