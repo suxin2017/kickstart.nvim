@@ -40,7 +40,7 @@ vim.keymap.set('n', '<leader>bd', '<cmd>bp|bd #<cr>', { desc = 'Close current bu
 vim.keymap.set('n', '<leader>bb', '<cmd>e #<cr>', { desc = 'Switch to other buffer' })
 
 -- terminal
-vim.keymap.set({ 'n', 't', 'i' }, '<C-\\>', '<cmd>ToggleTerm<cr>', { desc = 'Toggle terminal' })
+vim.keymap.set({ 'n', 't', 'i' }, '<C-`>', '<cmd>ToggleTerm<cr>', { desc = 'Toggle terminal' })
 
 -- quicklist
 vim.keymap.set('n', '[q', vim.cmd.cprev, { desc = 'Previous Quickfix' })
