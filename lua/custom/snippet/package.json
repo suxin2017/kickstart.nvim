@@ -6,13 +6,19 @@
         "language": [
           "all"
         ],
-        "path": "./snippets/all.json"
+        "path": "./all.json"
       },
       {
         "language": [
           "lua"
         ],
         "path": "./lua.json"
+      },
+      {
+        "language": [
+          "typescriptreact"
+        ],
+        "path": "./typescriptreact.json"
       }
     ]
   }

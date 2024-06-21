@@ -1,0 +1,76 @@
+{
+  "react ts page": {
+    "prefix": "tpag",
+    "body": [
+      "import React from 'react';",
+      "",
+      "const ${TM_DIRECTORY/.*\\x2f(.*)/${1}/}: React.FC = () => {",
+      "\treturn <div>${TM_DIRECTORY/.*\\x2f(.*)/${1}/}</div>",
+      "}",
+      "",
+      "export default ${TM_DIRECTORY/.*\\x2f(.*)/${1}/}"
+    ]
+  },
+  "react ts component by file": {
+    "prefix": "tfco",
+    "body": [
+      "import React from 'react';",
+      "",
+      "interface I${TM_FILENAME_BASE/(.)(.*)/${1:/upcase}${2:/camelcase}/}Props{",
+      "}",
+      "",
+      "export const ${TM_FILENAME_BASE/(.)(.*)/${1:/upcase}${2:/camelcase}/}: React.FC<I${TM_FILENAME_BASE/(.)(.*)/${1:/upcase}${2:/camelcase}/}Props> = (props) => {",
+      "\treturn <div>${TM_FILENAME_BASE/(.)(.*)/${1:/upcase}${2:/camelcase}/}</div>",
+      "}"
+    ]
+  },
+  "react ts component by directory": {
+    "prefix": "tdco",
+    "body": [
+      "import React from 'react';",
+      "",
+      "interface I${TM_DIRECTORY/.*\\x2f(.*)/${1}/}Props{",
+      "}",
+      "",
+      "export const ${TM_DIRECTORY/.*\\x2f(.*)/${1}/}: React.FC<I${TM_DIRECTORY/.*\\x2f(.*)/${1}/}Props> = (props) => {",
+      "\treturn <div> ${TM_DIRECTORY/.*\\x2f(.*)/${1}/}</div>",
+      "}"
+    ]
+  },
+  "arrow react component function ": {
+    "prefix": "acf",
+    "body": ["const ${1}:React.FC = ()=> {", "\treturn $2", "}"]
+  },
+  "arrow function": {
+    "prefix": "ar",
+    "body": ["($1)=>{$2}"]
+  },
+  "cs": {
+    "prefix": "cs",
+    "body": "import cs from 'classnames'"
+  },
+  "sty": {
+    "prefix": "sty",
+    "body": "import styles from './index.module.less'"
+  },
+  "msg": {
+    "prefix": "msg",
+    "body": "<FormattedMessage defaultMessage='$1' />"
+  },
+  "iintl": {
+    "prefix": "iintl",
+    "body": "const intl = useIntl();"
+  },
+  "imsg": {
+    "prefix": "imsg",
+    "body": "intl.formatMessage({defaultMessage:'$1'})"
+  },
+  "iwap": {
+    "prefix": "iwap",
+    "body": "intl.formatMessage({defaultMessage:'$TM_SELECTED_TEXT'})"
+  },
+  "iewap": {
+    "prefix": "iewap",
+    "body": "<FormattedMessage defaultMessage=\"$TM_SELECTED_TEXT\" />"
+  }
+}
