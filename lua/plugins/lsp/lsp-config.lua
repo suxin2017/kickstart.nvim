@@ -8,7 +8,14 @@ return { -- LSP Configuration & Plugins
     'williamboman/mason-lspconfig.nvim',
     -- `neodev` configures Lua LSP for your Neovim config, runtime and plugins
     -- used for completion, annotations and signatures of Neovim apis
-    { 'folke/neodev.nvim', opts = {} },
+    {
+      'folke/lazydev.nvim',
+      ft = 'lua', -- only load on lua files
+      cmd = 'LazyDev',
+      opts = {
+        library = { 'lazy.nvim' },
+      },
+    },
   },
   opts = function()
     local config = require 'config'
