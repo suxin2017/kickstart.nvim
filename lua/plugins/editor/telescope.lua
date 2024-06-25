@@ -90,7 +90,7 @@ return { -- Fuzzy Finder (files, lsp, etc)
 
     vim.keymap.set('n', '<leader>s.', builtin.oldfiles, { desc = 'Search Recent Files ("." for repeat)' })
 
-    vim.keymap.set('n', '<leader><leader>', builtin.buffers, { desc = '  Find existing buffers' })
+    vim.keymap.set('n', '<leader><leader>', builtin.buffers, { desc = 'Find existing buffers' })
 
     -- find some thing
     vim.keymap.set('n', '<leader>ff', builtin.find_files, { desc = 'Search Files' })

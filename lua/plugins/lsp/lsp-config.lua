@@ -1,4 +1,3 @@
--- vim.lsp.set_log_level 'debug'
 return { -- LSP Configuration & Plugins
   'neovim/nvim-lspconfig',
   event = { 'BufReadPre', 'BufNewFile' },
@@ -17,7 +16,7 @@ return { -- LSP Configuration & Plugins
       },
     },
   },
-  opts = function()
+  config = function()
     local config = require 'config'
     local opts = {
       -- options for vim.diagnostic.config()
@@ -52,9 +51,6 @@ return { -- LSP Configuration & Plugins
       },
     }
     vim.diagnostic.config(vim.deepcopy(opts.diagnostics))
-    return opts
-  end,
-  config = function()
     -- Brief aside: **What is LSP?**
     --
     -- LSP is an initialism you've probably heard, but might not understand what it is.

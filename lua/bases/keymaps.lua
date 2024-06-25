@@ -25,7 +25,7 @@ map('n', '<leader>w|', '<C-W>v', { desc = 'Split Window Right', remap = true })
 vim.keymap.set('t', '<Esc><Esc>', '<C-\\><C-n>', { desc = 'Exit terminal mode' })
 
 -- quit all
-vim.keymap.set('n', '<leader>qq', '<cmd>qa<cr>', { desc = 'Quit All' })
+vim.keymap.set('n', '<leader>q', '<cmd>qa<cr>', { desc = 'Quit All' })
 
 -- run current buffer luafile
 vim.keymap.set('n', '<leader>rl', '<cmd>luafile %<cr>', { desc = 'Run current lua file' })

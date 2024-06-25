@@ -81,3 +81,10 @@ vim.opt.tabstop = 2
 
 vim.opt.linebreak = true -- Wrap lines at convenient points
 vim.opt.list = true -- Show some invisible characters (tabs...
+
+local opt = vim.opt
+opt.smoothscroll = true
+opt.foldexpr = 'nvim_treesitter#foldexpr()'
+opt.foldmethod = 'expr'
+opt.foldtext = ''
+opt.foldenable = false
