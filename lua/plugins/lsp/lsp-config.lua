@@ -125,6 +125,24 @@ return { -- LSP Configuration & Plugins
         -- or a suggestion from your LSP for this to activate.
         map('<leader>ca', vim.lsp.buf.code_action, 'Code Action')
 
+        map('<leader>ci', function()
+          vim.lsp.buf.code_action {
+            apply = true,
+            context = {
+              only = { 'source.organizeImports' },
+              diagnostics = {},
+            },
+          }
+        end, 'Organize Imports')
+        map('<leader>cm', function()
+          vim.lsp.buf.code_action {
+            apply = true,
+            context = {
+              only = { 'source.addMissingImports.ts' },
+              diagnostics = {},
+            },
+          }
+        end, 'Add Missing Import')
         -- Opens a popup that displays documentation about the word under your cursor
         --  See `:help K` for why this keymap.
         map('K', vim.lsp.buf.hover, 'Hover Documentation')
