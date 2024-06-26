@@ -16,15 +16,15 @@ return {
         additional_vim_regex_highlighting = { 'ruby' },
         disable = { 'tmux' },
       },
-      -- incremental_selection = {
-      --   enable = true,
-      --   keymaps = {
-      --     init_selection = 'af',
-      --     node_incremental = 'af',
-      --     scope_incremental = false,
-      --     node_decremental = '<bs>',
-      --   },
-      -- },
+      incremental_selection = {
+        enable = true,
+        keymaps = {
+          init_selection = 'gnn', -- set to `false` to disable one of the mappings
+          node_incremental = 'grn',
+          scope_incremental = 'grc',
+          node_decremental = 'grm',
+        },
+      },
       indent = { enable = true, disable = { 'ruby' } },
       textobjects = {
         -- select = {
