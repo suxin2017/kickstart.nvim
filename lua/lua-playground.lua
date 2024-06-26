@@ -26,3 +26,6 @@ local i = require('nvim-web-devicons').get_icon('1.ts', 'ts')
 -- vim.ui.open 'https://neovim.io/'
 -- vim.ui.open '~/.config/nvim/README.md'
 --A
+--
+--
+-- print(vim.tbl_contains({ 'a' }, 'a'))

@@ -134,15 +134,19 @@ return { -- LSP Configuration & Plugins
             },
           }
         end, 'Organize Imports')
-        map('<leader>cm', function()
-          vim.lsp.buf.code_action {
-            apply = true,
-            context = {
-              only = { 'source.addMissingImports.ts' },
-              diagnostics = {},
-            },
-          }
-        end, 'Add Missing Import')
+
+        if vim.bo.filetype == 'typescriptreact' then
+          map('<leader>cm', function()
+            vim.lsp.buf.code_action {
+              apply = true,
+              context = {
+                -- ignore
+                only = { 'source.addMissingImports.ts' },
+                diagnostics = {},
+              },
+            }
+          end, 'Add Missing Import')
+        end
         -- Opens a popup that displays documentation about the word under your cursor
         --  See `:help K` for why this keymap.
         map('K', vim.lsp.buf.hover, 'Hover Documentation')

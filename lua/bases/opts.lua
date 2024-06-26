@@ -88,3 +88,5 @@ opt.foldexpr = 'nvim_treesitter#foldexpr()'
 opt.foldmethod = 'expr'
 opt.foldtext = ''
 opt.foldenable = false
+
+opt.updatetime = 200 -- Save swap file and trigger CursorHold
