@@ -173,6 +173,12 @@ return { -- LSP Configuration & Plugins
     capabilities = vim.tbl_deep_extend('force', capabilities, require('cmp_nvim_lsp').default_capabilities())
 
     local servers = {
+      ['css-lsp'] = {},
+      ['cssmodules-language-server'] = {
+        capabilities = {
+          definitionProvider = false,
+        },
+      },
       eslint_d = {
         settings = {
           -- helps eslint find the eslintrc when it's placed in a subfolder instead of the cwd root
