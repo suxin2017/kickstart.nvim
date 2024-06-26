@@ -197,7 +197,7 @@ return { -- LSP Configuration & Plugins
           definitionProvider = false,
         },
       },
-      eslint_d = {
+      ['eslint-lsp'] = {
         settings = {
           -- helps eslint find the eslintrc when it's placed in a subfolder instead of the cwd root
           workingDirectories = { mode = 'auto' },
