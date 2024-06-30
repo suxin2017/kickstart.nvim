@@ -75,5 +75,6 @@ return {
   config = function(_, opts)
     local icons = require('config').icons
     require('neo-tree').setup(opts)
+    require 'custom.utils.neo-drop-paste'
   end,
 }
