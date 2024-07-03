@@ -11,15 +11,18 @@ vim.keymap.set('n', '<C-l>', '<C-w><C-l>', { desc = 'Move focus to the right win
 vim.keymap.set('n', '<C-j>', '<C-w><C-j>', { desc = 'Move focus to the lower window' })
 vim.keymap.set('n', '<C-k>', '<C-w><C-k>', { desc = 'Move focus to the upper window' })
 
-vim.keymap.set('n', '<A-Up>', '<cmd>resize +2<cr>', { desc = 'Move focus to the left window' })
-vim.keymap.set('n', '<A-Down>', '<cmd>resize -2<cr>', { desc = 'Move focus to the right window' })
-vim.keymap.set('n', '<A-Left>', '<cmd>vertical resize +2<cr>', { desc = 'Move focus to the lower window' })
-vim.keymap.set('n', '<A-Right>', '<cmd>vertical resize -2<cr>', { desc = 'Move focus to the upper window' })
+vim.keymap.set('n', '<A-Up>', '<cmd>resize +4<cr>', { desc = 'Move focus to the left window' })
+vim.keymap.set('n', '<A-Down>', '<cmd>resize -4<cr>', { desc = 'Move focus to the right window' })
+vim.keymap.set('n', '<A-Left>', '<cmd>vertical resize +4<cr>', { desc = 'Move focus to the lower window' })
+vim.keymap.set('n', '<A-Right>', '<cmd>vertical resize -4<cr>', { desc = 'Move focus to the upper window' })
 
 map('n', '<leader>ww', '<C-W>p', { desc = 'Other Window', remap = true })
 map('n', '<leader>wd', '<C-W>c', { desc = 'Delete Window', remap = true })
-map('n', '<leader>w-', '<C-W>s', { desc = 'Split Window Below', remap = true })
-map('n', '<leader>w|', '<C-W>v', { desc = 'Split Window Right', remap = true })
+map('n', '<leader>ws', '<C-W>s', { desc = 'Split Window Below', remap = true })
+map('n', '<leader>wv', '<C-W>v', { desc = 'Split Window Right', remap = true })
+map('n', '<leader>-', '<C-W>s', { desc = 'Split Window Below', remap = true })
+map('n', '<leader>|', '<C-W>v', { desc = 'Split Window Right', remap = true })
+map('n', '<leader>wv', '<C-W>=', { desc = 'Equally heig and wid', remap = true })
 
 -- escape terminal
 vim.keymap.set('t', '<Esc><Esc>', '<C-\\><C-n>', { desc = 'Exit terminal mode' })
