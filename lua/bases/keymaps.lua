@@ -22,7 +22,7 @@ map('n', '<leader>ws', '<C-W>s', { desc = 'Split Window Below', remap = true })
 map('n', '<leader>wv', '<C-W>v', { desc = 'Split Window Right', remap = true })
 map('n', '<leader>-', '<C-W>s', { desc = 'Split Window Below', remap = true })
 map('n', '<leader>|', '<C-W>v', { desc = 'Split Window Right', remap = true })
-map('n', '<leader>wv', '<C-W>=', { desc = 'Equally heig and wid', remap = true })
+map('n', '<leader>w=', '<C-W>=', { desc = 'Equally high and wide', remap = true })
 
 -- escape terminal
 vim.keymap.set('t', '<Esc><Esc>', '<C-\\><C-n>', { desc = 'Exit terminal mode' })
