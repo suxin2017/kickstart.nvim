@@ -18,6 +18,7 @@ return { -- Fuzzy Finder (files, lsp, etc)
       end,
     },
     { 'nvim-telescope/telescope-ui-select.nvim' },
+    { 'debugloop/telescope-undo.nvim' },
   },
   config = function()
     -- Telescope is a fuzzy finder that comes with a lot of different things that
@@ -61,6 +62,7 @@ return { -- Fuzzy Finder (files, lsp, etc)
     -- Enable Telescope extensions if they are installed
     pcall(require('telescope').load_extension, 'fzf')
     pcall(require('telescope').load_extension, 'ui-select')
+    pcall(require('telescope').load_extension, 'undo')
 
     -- See `:help telescope.builtin`
     local builtin = require 'telescope.builtin'
@@ -87,6 +89,7 @@ return { -- Fuzzy Finder (files, lsp, etc)
     -- vim.keymap.set('n', '<leader>sw', builtin.grep_string, { desc = 'Search current Word' })
     vim.keymap.set('n', '<leader>sd', builtin.diagnostics, { desc = 'Search Diagnostics' })
     vim.keymap.set('n', '<leader>sr', builtin.registers, { desc = 'Search Registers' })
+    vim.keymap.set('n', '<leader>su', '<cmd>Telescope undo<cr>', { desc = 'Search Undo' })
 
     vim.keymap.set('n', '<leader>s.', builtin.oldfiles, { desc = 'Search Recent Files ("." for repeat)' })
 

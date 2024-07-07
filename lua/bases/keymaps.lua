@@ -24,6 +24,8 @@ map('n', '<leader>-', '<C-W>s', { desc = 'Split Window Below', remap = true })
 map('n', '<leader>|', '<C-W>v', { desc = 'Split Window Right', remap = true })
 map('n', '<leader>w=', '<C-W>=', { desc = 'Equally high and wide', remap = true })
 
+map('n', '<leader>td', '<cmd>tbo<cr>', { desc = 'Close other tabs' })
+
 -- escape terminal
 vim.keymap.set('t', '<Esc><Esc>', '<C-\\><C-n>', { desc = 'Exit terminal mode' })
 

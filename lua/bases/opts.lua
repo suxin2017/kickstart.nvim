@@ -29,7 +29,7 @@ vim.opt.showmode = false
 -- Sync clipboard between OS and Neovim.
 --  Remove this option if you want your OS clipboard to remain independent.
 --  See `:help 'clipboard'`
-vim.opt.clipboard = 'unnamedplus'
+vim.opt.clipboard = vim.env.SSH_TTY and '' or 'unnamedplus' -- Sync with system clipboard
 
 -- Enable break indent
 vim.opt.breakindent = true
@@ -75,9 +75,6 @@ vim.opt.confirm = true -- Confirm to save changes before exiting modified buffer
 vim.opt.hlsearch = true
 
 vim.opt.laststatus = 3
-vim.opt.expandtab = true
-vim.opt.shiftwidth = 2
-vim.opt.tabstop = 2
 
 vim.opt.linebreak = true -- Wrap lines at convenient points
 vim.opt.list = true -- Show some invisible characters (tabs...
@@ -92,4 +89,20 @@ opt.foldenable = false
 opt.updatetime = 200 -- Save swap file and trigger CursorHold
 
 opt.spelllang = 'en,cjk'
-opt.spelloptions:append 'camel'
+opt.spelloptions = 'camel,noplainbuffer'
+
+vim.opt.undofile = true
+opt.undolevels = 10000
+
+vim.opt.smartindent = true
+opt.linebreak = true
+
+opt.pumheight = 10 -- Maximum number of entries in a popup
+
+-- 缩进
+opt.shiftround = true
+vim.opt.expandtab = true
+vim.opt.shiftwidth = 4
+vim.opt.tabstop = 4
+
+opt.virtualedit = 'block'
