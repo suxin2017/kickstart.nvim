@@ -90,3 +90,6 @@ opt.foldtext = ''
 opt.foldenable = false
 
 opt.updatetime = 200 -- Save swap file and trigger CursorHold
+
+opt.spelllang = 'en,cjk'
+opt.spelloptions:append 'camel'

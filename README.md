@@ -4,7 +4,7 @@
 
 Best nvim config for myself
 
-power by kckstart
+power by kckstast
 
 ## Installation
 

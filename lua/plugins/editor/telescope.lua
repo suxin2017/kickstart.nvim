@@ -94,6 +94,7 @@ return { -- Fuzzy Finder (files, lsp, etc)
 
     -- find some thing
     vim.keymap.set('n', '<leader>ff', builtin.find_files, { desc = 'Search Files' })
+    vim.keymap.set('n', '<leader>fb', builtin.git_branches, { desc = 'Search Branch' })
 
     -- change colorscheme
     vim.keymap.set('n', '<leader>uC', function()
