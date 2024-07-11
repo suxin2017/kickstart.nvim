@@ -26,11 +26,6 @@ vim.opt.mouse = 'a'
 -- Don't show the mode, since it's already in the status line
 vim.opt.showmode = false
 
--- Sync clipboard between OS and Neovim.
---  Remove this option if you want your OS clipboard to remain independent.
---  See `:help 'clipboard'`
-vim.opt.clipboard = vim.env.SSH_TTY and '' or 'unnamedplus' -- Sync with system clipboard
-
 -- Enable break indent
 vim.opt.breakindent = true
 
@@ -109,3 +104,31 @@ opt.virtualedit = 'block'
 
 -- session
 vim.o.sessionoptions = 'blank,buffers,curdir,folds,help,tabpages,winsize,winpos,terminal,localoptions'
+
+-- 完美的远端复制
+local function no_paste()
+  return function()
+    --[ 返回 “” 寄存器的内容，用来作为 p 操作符的粘贴物 ]
+    local content = vim.fn.getreg '"'
+    return vim.split(content, '\n')
+  end
+end
+
+if os.getenv 'SSH_TTY' == nil then
+  --[ 当前环境为本地环境，也包括 wsl ]
+  opt.clipboard:append 'unnamedplus'
+else
+  opt.clipboard:append 'unnamedplus'
+  vim.g.clipboard = {
+    name = 'OSC 52',
+    copy = {
+      ['+'] = require('vim.ui.clipboard.osc52').copy '+',
+      ['*'] = require('vim.ui.clipboard.osc52').copy '*',
+    },
+    paste = {
+      --[ 小括号里面的内容可能是毫无意义的，但是保持原样可能看起来更好一点 ]
+      ['+'] = no_paste(),
+      ['*'] = no_paste(),
+    },
+  }
+end -- Enable break indent
