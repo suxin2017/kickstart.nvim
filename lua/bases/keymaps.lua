@@ -25,6 +25,7 @@ map('n', '<leader>|', '<C-W>v', { desc = 'Split Window Right', remap = true })
 map('n', '<leader>w=', '<C-W>=', { desc = 'Equally high and wide', remap = true })
 
 map('n', '<leader>td', '<cmd>tabc<cr>', { desc = 'Close current tabs' })
+map('n', '<leader>tn', '<cmd>tabnew<cr>', { desc = 'Create new tab' })
 map('n', '<leader>to', '<cmd>tabonly<cr>', { desc = 'Close other tabs' })
 
 -- escape terminal
@@ -44,7 +45,7 @@ vim.keymap.set('n', '<leader>bb', '<cmd>e #<cr>', { desc = 'Switch to other buff
 vim.keymap.set('n', '<leader>bo', '<cmd>BufferLineCloseOthers<cr>', { desc = 'Close other buffer' })
 
 -- terminal
-vim.keymap.set({ 'n', 't', 'i' }, '<C-`>', '<cmd>ToggleTerm<cr>', { desc = 'Toggle terminal' })
+vim.keymap.set({ 'n', 't', 'i' }, '<C-t>', '<cmd>exe v:count1 . "ToggleTerm"<cr>', { desc = 'Toggle terminal' })
 
 -- quicklist
 vim.keymap.set('n', '[q', vim.cmd.cprev, { desc = 'Previous Quickfix' })
@@ -52,11 +53,11 @@ vim.keymap.set('n', ']q', vim.cmd.cnext, { desc = 'Next Quickfix' })
 
 -- diagnostic
 local diagnostic_goto = function(next, severity)
-  local go = next and vim.diagnostic.goto_next or vim.diagnostic.goto_prev
-  severity = severity and vim.diagnostic.severity[severity] or nil
-  return function()
-    go { severity = severity }
-  end
+    local go = next and vim.diagnostic.goto_next or vim.diagnostic.goto_prev
+    severity = severity and vim.diagnostic.severity[severity] or nil
+    return function()
+        go { severity = severity }
+    end
 end
 map('n', '<leader>cd', vim.diagnostic.open_float, { desc = 'Line Diagnostics' })
 map('n', ']d', diagnostic_goto(true), { desc = 'Next Diagnostic' })
