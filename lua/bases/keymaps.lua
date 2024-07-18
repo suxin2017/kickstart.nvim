@@ -32,7 +32,7 @@ map('n', '<leader>to', '<cmd>tabonly<cr>', { desc = 'Close other tabs' })
 vim.keymap.set('t', '<Esc><Esc>', '<C-\\><C-n>', { desc = 'Exit terminal mode' })
 
 -- quit all
-vim.keymap.set('n', '<leader>q', '<cmd>qa<cr>', { desc = 'Quit All' })
+vim.keymap.set('n', '<leader>qq', '<cmd>qa<cr>', { desc = 'Quit All' })
 
 -- run current buffer luafile
 vim.keymap.set('n', '<leader>rl', '<cmd>luafile %<cr>', { desc = 'Run current lua file' })
@@ -45,7 +45,7 @@ vim.keymap.set('n', '<leader>bb', '<cmd>e #<cr>', { desc = 'Switch to other buff
 vim.keymap.set('n', '<leader>bo', '<cmd>BufferLineCloseOthers<cr>', { desc = 'Close other buffer' })
 
 -- terminal
-vim.keymap.set({ 'n', 't', 'i' }, '<C-t>', '<cmd>exe v:count1 . "ToggleTerm"<cr>', { desc = 'Toggle terminal' })
+vim.keymap.set({ 'n', 't', 'i' }, '<C-`>', '<cmd>ToggleTerm direction=tab<cr>', { desc = 'Toggle terminal' })
 
 -- quicklist
 vim.keymap.set('n', '[q', vim.cmd.cprev, { desc = 'Previous Quickfix' })

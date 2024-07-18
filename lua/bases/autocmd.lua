@@ -14,14 +14,14 @@ vim.api.nvim_create_autocmd('TextYankPost', {
 })
 
 -- 提示是录制模式
-vim.api.nvim_create_autocmd('RecordingEnter', {
-  desc = 'Notify RecordingEnter',
-  group = group,
-  callback = function(ctx)
-    local msg = 'Recording macro started\n' .. 'id [' .. vim.fn.reg_recording() .. ']\n' .. 'buffer [' .. ctx.buf .. ']\n' .. 'file [' .. ctx.file .. ']'
-    vim.notify(msg)
-  end,
-})
+-- vim.api.nvim_create_autocmd('RecordingEnter', {
+--   desc = 'Notify RecordingEnter',
+--   group = group,
+--   callback = function(ctx)
+--     local msg = 'Recording macro started\n' .. 'id [' .. vim.fn.reg_recording() .. ']\n' .. 'buffer [' .. ctx.buf .. ']\n' .. 'file [' .. ctx.file .. ']'
+--     vim.notify(msg)
+--   end,
+-- })
 
 -- close some filetypes with <q>
 vim.api.nvim_create_autocmd('FileType', {

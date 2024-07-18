@@ -6,17 +6,17 @@ return { -- Useful plugin to show you pending keybinds.
 
     -- Document existing key chains
     require('which-key').register {
-      ['<leader>c'] = { name = 'Code', _ = 'which_key_ignore' },
-      ['<leader>d'] = { name = 'Document', _ = 'which_key_ignore' },
-      ['<leader>b'] = { name = 'Buffer', _ = 'which_key_ignore' },
-      ['<leader>r'] = { name = 'Rename', _ = 'which_key_ignore' },
-      ['<leader>s'] = { name = 'Search', _ = 'which_key_ignore' },
-      ['<leader>f'] = { name = 'Find', _ = 'which_key_ignore' },
-      ['<leader>w'] = { name = 'Window', _ = 'which_key_ignore' },
-      ['<leader>t'] = { name = 'Toggle', _ = 'which_key_ignore' },
-      ['<leader>g'] = { name = 'Git / Goto', _ = 'which_key_ignore' },
-      ['<leader>x'] = { name = 'Trouble', _ = 'which_key_ignore' },
-      ['<leader>u'] = { name = 'Ui', _ = 'which_key_ignore' },
+      ['<leader>c'] = { '<leader>c', group = 'Code' },
+      ['<leader>d'] = { '<leader>d', group = 'Document' },
+      ['<leader>b'] = { '<leader>b', group = 'Buffer' },
+      ['<leader>r'] = { '<leader>r', group = 'Rename' },
+      ['<leader>s'] = { '<leader>r', group = 'Search' },
+      ['<leader>f'] = { group = 'Find' },
+      ['<leader>w'] = { group = 'Window' },
+      ['<leader>t'] = { group = 'Toggle' },
+      ['<leader>g'] = { group = 'Git / Goto' },
+      ['<leader>x'] = { group = 'Trouble' },
+      ['<leader>u'] = { group = 'Ui' },
     }
   end,
 }
