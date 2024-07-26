@@ -6,6 +6,12 @@ return {
   },
   dependencies = {
     'rcarriga/nvim-notify',
+    config = function()
+      require('notify').setup {
+        timeout = 500,
+        stages = 'static',
+      }
+    end,
   },
   config = function()
     require('noice').setup {

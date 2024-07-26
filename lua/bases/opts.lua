@@ -78,8 +78,19 @@ local opt = vim.opt
 opt.smoothscroll = true
 opt.foldexpr = 'nvim_treesitter#foldexpr()'
 opt.foldmethod = 'expr'
-opt.foldtext = ''
+-- opt.foldtext = ''
 opt.foldenable = false
+opt.foldlevel = 99
+vim.o.foldlevelstart = 99
+opt.fillchars = {
+  foldopen = '',
+  foldclose = '',
+  fold = ' ',
+  foldsep = ' ',
+  diff = '╱',
+  eob = ' ',
+}
+vim.o.foldcolumn = '1'
 
 opt.updatetime = 200 -- Save swap file and trigger CursorHold
 
