@@ -10,6 +10,11 @@ vim.keymap.set('n', '<C-h>', '<C-w><C-h>', { desc = 'Move focus to the left wind
 vim.keymap.set('n', '<C-l>', '<C-w><C-l>', { desc = 'Move focus to the right window' })
 vim.keymap.set('n', '<C-j>', '<C-w><C-j>', { desc = 'Move focus to the lower window' })
 vim.keymap.set('n', '<C-k>', '<C-w><C-k>', { desc = 'Move focus to the upper window' })
+-- fix key map
+vim.keymap.set('n', '<Left>', '<C-w><C-h>', { desc = 'Move focus to the left window' })
+vim.keymap.set('n', '<Right>', '<C-w><C-l>', { desc = 'Move focus to the right window' })
+vim.keymap.set('n', '<Down>', '<C-w><C-j>', { desc = 'Move focus to the lower window' })
+vim.keymap.set('n', '<Up>', '<C-w><C-k>', { desc = 'Move focus to the upper window' })
 
 vim.keymap.set('n', '<A-Up>', '<cmd>resize +4<cr>', { desc = 'Move focus to the left window' })
 vim.keymap.set('n', '<A-Down>', '<cmd>resize -4<cr>', { desc = 'Move focus to the right window' })
@@ -45,7 +50,7 @@ vim.keymap.set('n', '<leader>bb', '<cmd>e #<cr>', { desc = 'Switch to other buff
 vim.keymap.set('n', '<leader>bo', '<cmd>BufferLineCloseOthers<cr>', { desc = 'Close other buffer' })
 
 -- terminal
-vim.keymap.set({ 'n', 't', 'i' }, '<C-`>', '<cmd>ToggleTerm direction=tab<cr>', { desc = 'Toggle terminal' })
+vim.keymap.set({ 'n', 't', 'i' }, '<leader>tt', '<cmd>ToggleTerm direction=tab<cr>', { desc = 'Toggle terminal' })
 
 -- quicklist
 vim.keymap.set('n', '[q', vim.cmd.cprev, { desc = 'Previous Quickfix' })
